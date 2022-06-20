@@ -101,6 +101,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias v='nvim'
 alias cls='clear'
 alias zz='exit'
+alias py='python3'
 set -o vi
 
 # Alias definitions.
@@ -147,6 +148,6 @@ WHITE='\[\e[0;00m\]'
 
 
 
-
+# TODO: ANSI scape sequence can not work properly in other terminals (this works in WT)
 PROMPT_COMMAND='if [ $? = 0 ]; then QUOTE_COLOR="\e[1;38;2;199;251;165m"; else QUOTE_COLOR="\e[1;31m"; fi'
 PS1="👽 ${CYAN} ${ROCK}\w ${CYAN} ${CYAN}\$(git_l)${VIOLET}\$(parse_git_branch)${CYAN}\$(git_r) \$(echo -ne \$QUOTE_COLOR)❯ ${WHITE}"
