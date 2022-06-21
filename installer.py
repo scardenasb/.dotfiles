@@ -19,7 +19,20 @@ os.system('./squashfs-root/AppRun --version')
 os.system('sudo mv squashfs-root /')
 os.system('sudo ln -s /squashfs-root/AppRun /usr/bin/nvim')
 os.system('rm -rf nvim.appimage')
+os.system('mkdir ./fonts/')
 
+# To download the best programming fonts.
+# No ligatures 👇
+# Regular
+os.system('wget -cO - https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/NoLigatures/Regular/complete/JetBrains%20Mono%20NL%20Regular%20Nerd%20Font%20Complete%20Mono.ttf > ./fonts/RegularJetMonoNL.ttf')
+# Bold
+os.system('wget -cO - https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/NoLigatures/Bold/complete/JetBrains%20Mono%20NL%20Bold%20Nerd%20Font%20Complete%20Mono.ttf > ./fonts/BoldJetMonoNL.ttf')
+
+# Ligatures 👇
+# # Regular
+# os.system('wget -cO - https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Regular/complete/JetBrains%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.ttf > ./fonts/RegularJetMonoL.ttf')
+# # Bold
+# os.system('wget -cO - https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/Ligatures/Bold/complete/JetBrains%20Mono%20Bold%20Nerd%20Font%20Complete%20Mono.ttf > ./fonts/BoldJetMonoL.ttf')
 
 # Linux 
 os.system('curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
