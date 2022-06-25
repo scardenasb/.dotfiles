@@ -11,6 +11,7 @@ os.system('sudo apt-get update')   # NOTE: Optional
 os.system('sudo apt install curl')   # NOTE: curl vimplug doesn't seem to work with snap pkm curl's version
 os.system('sudo apt install npm -y')
 os.system('sudo apt install pip -y')
+os.system('sudo apt install grep')
 os.system('python3 -m pip install pynvim')
 os.system('curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage')
 os.system('chmod u+x nvim.appimage')
@@ -21,6 +22,8 @@ os.system('sudo ln -s /squashfs-root/AppRun /usr/bin/nvim')
 os.system('rm -rf nvim.appimage')
 os.system('mkdir ./fonts/')
 
+
+# TODO: Check font path, doesn't work in some ubuntu/debian based distros like lubuntu.
 # To download the best programming fonts.
 # No ligatures 👇
 # Regular

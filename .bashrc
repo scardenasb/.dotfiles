@@ -102,6 +102,7 @@ alias v='nvim'
 alias cls='clear'
 alias zz='exit'
 alias py='python3'
+alias git-tree='git log --graph --pretty=oneline --abbrev-commit'
 set -o vi
 
 # Alias definitions.
@@ -140,15 +141,15 @@ git_r() {
 
 
 # colors
-CYAN='\[\e[1;38;2;43;255;184m\]'
-ROCK='\[\e[1;38;2;220;125;104m\]'
+CYAN='\[\e[0;38;2;43;255;184m\]'
+ROCK='\[\e[0;38;2;220;125;104m\]'
 VIOLET='\[\e[1;35m\]'
 WHITE='\[\e[0;00m\]'
 
-
+# 7-255-0
 
 # TODO: ANSI scape sequence can not work properly in other terminals (this works in WT)
 # TODO: Here are 2 PS1. The second seems to work perfectly with most terminals, but at a readability cost.
-PROMPT_COMMAND='if [ $? = 0 ]; then QUOTE_COLOR="\e[1;38;2;199;251;165m"; else QUOTE_COLOR="\e[1;31m"; fi'
-PS1="👽 ${CYAN} ${ROCK}\w ${CYAN} ${CYAN}\$(git_l)${VIOLET}\$(parse_git_branch)${CYAN}\$(git_r) \$(echo -ne \$QUOTE_COLOR)❯ ${WHITE}"
+PROMPT_COMMAND='if [ $? = 0 ]; then QUOTE_COLOR="\e[1;38;2;173;241;130m"; else QUOTE_COLOR="\e[1;31m"; fi'
+PS1="👽 ${CYAN} ${ROCK}\w ${CYAN} ${CYAN}\$(git_l)${VIOLET}\$(parse_git_branch)${CYAN}\$(git_r) \$(echo -ne \$QUOTE_COLOR)❯${WHITE}"
 # PS1='👽 \[\e[1;38;2;43;255;184m\] \[\e[1;38;2;220;125;104m\]\w \[\e[1;38;2;43;255;184m\] \[\e[1;38;2;43;255;184m\]\[$(git_l)\]\[\e[1;35m\]\[$(parse_git_branch)\]\[\e[1;38;2;43;255;184m\]\[$(git_r)\] \[$(echo -ne $QUOTE_COLOR)\]❯ \[\e[0;00m\]'

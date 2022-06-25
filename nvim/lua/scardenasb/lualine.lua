@@ -69,7 +69,7 @@ local diff = {
 
 local filesize = {
   "filesize",
-  icon = { "" },
+  icon = { "💾" },
   padding = { left = 2, right = 1 }
 }
 

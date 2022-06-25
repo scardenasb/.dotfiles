@@ -17,7 +17,8 @@
 　　　.　*　　　▨　　.　　　.　
 
 
--- essentials --]]
+--]]
+-- essentials
 require "scardenasb.SETTINGS"
 require "scardenasb.MAPPINGS"
 require "scardenasb.PLUGINS"
@@ -35,4 +36,4 @@ require "scardenasb.bufferline"
 require "scardenasb.commenter"
 require "scardenasb.hop"
 require "scardenasb.telescope"
--- vim.cmd('source ' .. ~/init.vim .. '/lua/scardenasb/cursor.vim')
+-- require "scardenasb.nvim-ufo"

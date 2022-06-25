@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
 vim.o.shell = "/usr/bin/bash"
+vim.g.mapleader = ' '
 vim.g.python3_host_prog = "/mnt/c/python310/python.exe"
 
 local options = {
@@ -25,14 +25,18 @@ local options = {
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   number = true, -- set numbered lines
   laststatus = 3, -- status bar 0=never; 1=only if you have more than 2 windows; 2=always
-  relativenumber = false, -- set relative numbered lines, slow down when scroll but less than cursorline
-  numberwidth = 4, -- set number column width {default 4}
+  relativenumber = true, -- set relative numbered lines, slow down when scroll but less than cursorline
+  numberwidth = 5, -- set number column width {default 4}
   wrap = false, -- display lines as one long line
   scrolloff = 8, -- how many lines will be locked when you keep k or j pressed 5-10 good number
   sidescrolloff = 8, -- same as 👆 but to the side
   guifont = "JetBrainsMono NF:h11", -- the font used in graphical neovim applications
   modified = false,
   spell = false,
+  foldcolumn = 'auto:3',
+  foldmethod = 'manual',
+  guicursor = 'n-c-sm:block-blinkon1,v:block-blinkon0,i-ci-ve:ver25-blinkon1,r-cr-o:hor20',
+
 
   -- Speed
   ttimeoutlen = 0,
@@ -74,6 +78,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
     end)
   end,
 })
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
   pattern = { "*.lua", "*.html", "*.css", "*.js", "*.ts", "*.bashrc" },
   callback = function()
@@ -85,6 +90,14 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
     end)
   end,
 })
+
+
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.cmd "set guicursor=a:hor25-blinkon1"
+  end,
+})
+
 
 -- To enable clipboard (not necessary in windows terminal wsl)
 -- vim.g.clipboard = {
@@ -99,5 +112,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
 --   },
 --   cache_enable = 0,
 -- }
+
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

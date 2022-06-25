@@ -11,6 +11,8 @@ mapper("n", "<leader>w", ":w<CR>")
 mapper("n", "<leader>q", ":q<CR>")
 mapper("n", "zz", ":quitall<CR>")
 
+mapper("n", "zf", "v%zf")
+
 -- Resize panes inside nvim
 mapper("n", "<leader><right>", ":vertical resize +5<CR>")
 mapper("n", "<leader><left>", ":vertical resize -5<CR>")
@@ -76,16 +78,15 @@ mapper("n", "<s-tab>", ":bp<CR>")
 mapper("n", "<leader>t", ":tabn<CR>")
 mapper("n", "td", ":tabclose<CR>")
 
--- Move in insert mode with: h=  ,t=  ,n=  ,c=  (Good for small keyboards, htnc is for Dvorak; jkli is for Querty)
+-- Move in insert mode with: h=  ,t=  ,n=  ,c=  (Good for small keyboards, htnc is for Dvorak; jkli is for Qwerty)
 mapper("i", "<a-h>", "<Left>")
 mapper("i", "<a-t>", "<Down>")
 mapper("i", "<a-n>", "<Right>")
 mapper("i", "<a-c>", "<Up>")
 
--- Move lil faster (TODO: look for another key)
+-- Move lil faster (TODO: look for another key maybe)
 mapper("n", "<C-t>", "2<C-e>") --down
 mapper("n", "<C-c>", "2<C-y>") -- up
-
 
 -- Diag Telescope
 mapper("n", "<leader>td", "<cmd>Telescope diagnostics<CR>")
