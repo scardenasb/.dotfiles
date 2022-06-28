@@ -10,6 +10,9 @@ Plug("akinsho/bufferline.nvim") -- Bufferline
 Plug("numToStr/Comment.nvim") -- Commenter
 Plug("norcalli/nvim-colorizer.lua") -- To see colors in real typing time
 
+
+Plug("mhartington/formatter.nvim")
+
 -- Telescope
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")

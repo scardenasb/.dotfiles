@@ -99,6 +99,13 @@ vim.api.nvim_create_autocmd({ "VimLeave" }, {
 })
 
 
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  callback = function()
+    vim.cmd "FormatWrite"
+  end,
+})
+
+
 -- To enable clipboard (not necessary in windows terminal wsl)
 -- vim.g.clipboard = {
 --   name = "win32yank-wsl",

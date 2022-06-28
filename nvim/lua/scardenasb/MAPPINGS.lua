@@ -1,10 +1,13 @@
 local mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true })
+	vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true })
 end
 
 -- Reload init file
 mapper("n", "<F5>", ":source %<CR>")
 mapper("v", "<F5>", ":source %<CR>")
+
+-- Format (formatter.lua)
+mapper("n", "<leader>fo", ":Format<CR>")
 
 -- Save and quit easy
 mapper("n", "<leader>w", ":w<CR>")
