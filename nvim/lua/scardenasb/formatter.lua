@@ -1,6 +1,9 @@
-local util = require("formatter.util")
+local status_ok, configs = pcall(require, "formatter")
+if not status_ok then
+	return
+end
 
-require("formatter").setup({
+configs.setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
 	filetype = {

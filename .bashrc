@@ -103,6 +103,7 @@ alias cls='clear'
 alias zz='exit'
 alias py='python3'
 alias git-tree='git log --graph --pretty=oneline --abbrev-commit'
+alias fast-commit='git commit -am "update" && git push'
 set -o vi
 
 # Alias definitions.
