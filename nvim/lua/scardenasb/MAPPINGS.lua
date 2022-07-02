@@ -9,6 +9,10 @@ mapper("v", "<F5>", ":source %<CR>")
 -- Format (formatter.lua)
 mapper("n", "<leader>fo", ":Format<CR>")
 
+-- To fast single/double quote words
+mapper("n", "<leader>cs", "ciw''<esc>P")
+mapper("n", "<leader>cd", 'ciw""<esc>P')
+
 -- Save and quit easy
 mapper("n", "<leader>w", ":w<CR>")
 mapper("n", "<leader>q", ":q<CR>")
