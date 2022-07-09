@@ -92,8 +92,8 @@ local filetype = {
 local datetime = function()
 	local mode_ = vim.api.nvim_get_mode().mode
 	while mode_ ~= "nil" do
-		return vim.fn.strftime("｢%H:%M｣  %d-%b")
-		-- return vim.loop.fs_lchown(vim.fn.strftime("%H:%M"))
+		return vim.fn.strftime("｢%H:%M:%S｣  %d-%b")
+		-- return os.clock()
 	end
 end
 

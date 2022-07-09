@@ -57,11 +57,11 @@ local options = {
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
 }
 
--- vim.opt.shortmess:append "c"
-
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
+
+vim.opt.shortmess:append("c")
 
 -- To set tabs accord to the current file
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd({ "VimLeave" }, {
 	end,
 })
 
--- To auto format files, add only the ones that have a prettier installed (black in this case)
+-- To auto format files, add only the ones that have a prettier installed (black and stylua in this case)
 vim.api.nvim_create_autocmd({ "BufWritePost", "FileType" }, {
 	pattern = { "*.py", "*.lua" },
 	callback = function()
