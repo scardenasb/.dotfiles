@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 lsp_installer.settings({
-	ensure_installed = { "sumneko_lua", "pyright", "quick_lint_js", "html", "tsserver" },
+	ensure_installed = { "sumneko_lua", "pyright", "html", "tsserver" },
 	ui = {
 		icons = {
 			server_installed = "✓",
@@ -37,11 +37,6 @@ lsp_installer.on_server_ready(function(server)
 	if server.name == "tsserver" then
 		local tsserver_opts = require("scardenasb.lsp.servers.tsserver")
 		opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
-	end
-
-	if server.name == "quick_lint_js" then
-		local quick_lint_js_opts = require("scardenasb.lsp.servers.quick_lint_js")
-		opts = vim.tbl_deep_extend("force", quick_lint_js_opts, opts)
 	end
 
 	server:setup(opts)

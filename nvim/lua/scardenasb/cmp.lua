@@ -80,6 +80,7 @@ cmp.setup({
 		ghost_text = true,
 	},
 })
+
 cmp.setup.cmdline(":", {
 	sources = cmp.config.sources({
 		{ name = "path" },

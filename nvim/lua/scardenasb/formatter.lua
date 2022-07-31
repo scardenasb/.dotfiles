@@ -14,6 +14,9 @@ configs.setup({
 		python = {
 			require("formatter.filetypes.python").black,
 		},
+		javascript = {
+			require("formatter.filetypes.javascript").jsbeautify,
+		},
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {

@@ -57,15 +57,15 @@ local options = {
 	showmode = false, -- we don't need to see things like -- INSERT -- anymore
 }
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
+for i, j in pairs(options) do
+	vim.opt[i] = j
 end
 
 vim.opt.shortmess:append("c")
 
 -- To set tabs accord to the current file
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
-	pattern = { "*.py", "*.json" },
+	pattern = { "*.py", "*.json", "*.js" },
 	callback = function()
 		vim.schedule(function()
 			vim.opt.tabstop = 4
@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead", "FileType" }, {
-	pattern = { "*.lua", "*.html", "*.css", "*.js", "*.ts", "*.bashrc" },
+	pattern = { "*.css", "*.bashrc", "*.lua" },
 	callback = function()
 		vim.schedule(function()
 			vim.opt.tabstop = 2
@@ -98,7 +98,7 @@ vim.api.nvim_create_autocmd({ "VimLeave" }, {
 
 -- To auto format files, add only the ones that have a prettier installed (black and stylua in this case)
 vim.api.nvim_create_autocmd({ "BufWritePost", "FileType" }, {
-	pattern = { "*.py", "*.lua" },
+	pattern = { "*.py", "*.lua", "*.js" },
 	callback = function()
 		vim.cmd("FormatWrite")
 	end,
